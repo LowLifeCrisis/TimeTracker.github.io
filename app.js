@@ -31,6 +31,7 @@
   const statusLabel  = document.getElementById('timer-status-label');
   const taskDisplay  = document.getElementById('task-display');
   const taskInput    = document.getElementById('task-input');
+  const taskLabel    = document.getElementById('task-label');
   const btnStart     = document.getElementById('btn-start');
   const btnPause     = document.getElementById('btn-pause');
   const btnCommit    = document.getElementById('btn-commit');
@@ -162,7 +163,8 @@
       id:        Date.now(),
       task:      taskInput.value.trim() || 'Unnamed Mission',
       duration:  elapsed,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      category: taskLabel.value
     };
 
     sessions.unshift(session);
@@ -247,6 +249,7 @@
         <span class="tc-log-task">${escHtml(s.task)}</span>
         <span class="tc-log-time">${fmtDate(s.timestamp)}</span>
         <span class="tc-log-dur">${fmtShort(s.duration)}</span>
+        <span class="tc-log-tag"> ${s.category}</span>
         <button class="tc-log-del" data-id="${s.id}">[ X ]</button>
       </div>
     `).join('');

@@ -346,6 +346,15 @@ body::before {
   font-size: 11px;
   flex-shrink: 0;
 }
+.tc-log-tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 2px 8px;
+  border: 1px solid var(--border-bright);
+  color: var(--green-mid);
+  flex-shrink: 0;
+  margin-left: 8px;
+}
 .tc-log-del {
   cursor: pointer;
   color: #2a1a1a;
