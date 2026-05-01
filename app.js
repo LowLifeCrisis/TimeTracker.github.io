@@ -27,23 +27,23 @@
   let interval = null;
 
   // ── DOM refs ────────────────────────────────────────────────
-  const display      = document.getElementById('timer-display');
-  const statusLabel  = document.getElementById('timer-status-label');
-  const taskDisplay  = document.getElementById('task-display');
-  const taskInput    = document.getElementById('task-input');
-  const taskLabel    = document.getElementById('task-label');
-  const btnStart     = document.getElementById('btn-start');
-  const btnPause     = document.getElementById('btn-pause');
-  const btnCommit    = document.getElementById('btn-commit');
-  const logList      = document.getElementById('log-list');
-  const statToday    = document.getElementById('stat-today');
-  const statSessions = document.getElementById('stat-sessions');
-  const statXp       = document.getElementById('stat-xp');
-  const statTotal    = document.getElementById('stat-total');
-  const xpFillEl     = document.getElementById('xp-fill');
-  const xpPctEl      = document.getElementById('xp-pct');
-  const levelBadge   = document.getElementById('level-badge');
-  const clearBtn     = document.getElementById('clear-log');
+  const display          = document.getElementById('timer-display');
+  const statusLabel      = document.getElementById('timer-status-label');
+  const taskDisplay      = document.getElementById('task-display');
+  const taskInput        = document.getElementById('task-input');
+  const taskLabel        = document.getElementById('task-label');
+  const btnFiveMinute    = document.getElementById('btn-fiveMinute');
+  const btnFifteenMinute     = document.getElementById('btn-fifteenMinute');
+  const btnCommit        = document.getElementById('btn-commit');
+  const logList          = document.getElementById('log-list');
+  const statToday        = document.getElementById('stat-today');
+  const statSessions     = document.getElementById('stat-sessions');
+  const statXp           = document.getElementById('stat-xp');
+  const statTotal        = document.getElementById('stat-total');
+  const xpFillEl         = document.getElementById('xp-fill');
+  const xpPctEl          = document.getElementById('xp-pct');
+  const levelBadge       = document.getElementById('level-badge');
+  const clearBtn         = document.getElementById('clear-log');
 
   // ── Helpers ─────────────────────────────────────────────────
   function pad(n) {
@@ -122,8 +122,8 @@
     statusLabel.classList.add('tc-pulse');
     taskDisplay.textContent = '> ' + task;
 
-    btnStart.disabled  = true;
-    btnPause.disabled  = false;
+    //btnStart.disabled  = true;
+    //btnPause.disabled  = false;
     btnCommit.disabled = false;
     taskInput.disabled = true;
   }
@@ -187,8 +187,8 @@
     taskInput.value         = '';
     taskInput.disabled      = false;
 
-    btnStart.disabled        = false;
-    btnPause.disabled        = true;
+    //btnStart.disabled        = false;
+    //btnPause.disabled        = true;
     btnPause.textContent     = '[ PAUSE ]';
     btnCommit.disabled       = true;
 
@@ -260,8 +260,8 @@
   }
 
   // ── Event listeners ──────────────────────────────────────────
-  btnStart.addEventListener('click', startTimer);
-  btnPause.addEventListener('click', pauseTimer);
+  btnFiveMinute.addEventListener('click', addFiveMinutes);
+  btnFifteenMinute.addEventListener('click', addFifteenMinutes);
   btnCommit.addEventListener('click', commitTimer);
   clearBtn.addEventListener('click', clearAll);
 
